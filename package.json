@@ -1,5 +1,5 @@
 {
-  "name": "testing",
+  "name": "headless-web-testing-with-docker",
   "version": "1.0.0",
   "description": "My awesome testing",
   "main": "index.js",
@@ -8,26 +8,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eridem/testing.git"
+    "url": "git+https://github.com/eridem/headless-web-testing-with-docker.git"
   },
   "keywords": [
     "test",
     "web"
   ],
-  "author": "Miguel Ángel Domínguez Coloma",
+  "author": {
+    "name": "Miguel Ángel Domínguez Coloma",
+    "email": "m@eridem.net",
+    "url": "http://eridem.net"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/eridem/testing/issues"
+    "url": "https://github.com/eridem/headless-web-testing-with-docker/issues"
   },
-  "homepage": "https://github.com/eridem/testing#readme",
+  "homepage": "http://eridem.net/set-up-a-headless-web-testing-project-with-docker-chrome-and-firefox",
   "devDependencies": {},
   "dependencies": {
     "cucumber": "^4.2.1",
-    "selenium-standalone": "^6.14.0",
+    "selenium-standalone": "^6.14.1",
     "wdio-cucumber-framework": "^2.1.0",
-    "wdio-cucumber-reporter": "0.0.2",
     "wdio-junit-reporter": "^0.4.3",
     "wdio-selenium-standalone-service": "0.0.10",
+    "wdio-spec-reporter": "^0.1.4",
     "webdriverio": "^4.12.0"
   }
 }
