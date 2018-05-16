@@ -51,18 +51,21 @@ Create the Node.js application:
   npm init
 
   # Answer the questions as following
-  package name: (testing)
-  version: (1.0.0)
-  description: My awesome testing
-  entry point: (index.js)
-  test command: wdio
-  git repository: eridem/testing
-  keywords: test, web
-  author: Miguel Angel Dominguez Coloma
-  license: (ISC) MIT
+  package name:     (headless-web-testing-with-docker)
+  version:          (1.0.0)
+  description:      My awesome testing
+  entry point:      (index.js)
+  test command:     wdio
+  git repository:   eridem/headless-web-testing-with-docker
+  keywords:         test, web
+  author:           Miguel Angel Dominguez Coloma
+  license:          (ISC) MIT
 
   # Install webdriverio
   npm install webdriverio --save
+
+  # Install cucumber reporter
+  npm install wdio-spec-reporter --save
   ```
 
 - Configure WebDriverIo executing the command:
@@ -83,7 +86,7 @@ Create the Node.js application:
   ? Shall I install the reporter library for you?                         Yes
   ? Do you want to add a service to your test setup?                      selenium-standalone
   ? Shall I install the services for you?                                 Yes
-  ? Level of logging verbosity                                            result
+  ? Level of logging verbosity                                            silent
   ? In which directory should screenshots gets saved if a command fails?  ./output
   ? What is the base url?                                                 http://localhost
   ```
@@ -197,9 +200,7 @@ docker run -v "$(pwd)/output:/workdir/output" 'my-testing'
 At this moment, it should display only empty results because we do not have tests:
 
 ```plaintext
-> testing@1.0.0 test /workdir
-> wdio
-
+pattern ./features/**/*.feature did not match any file
 pattern ./features/**/*.feature did not match any file
 ```
 
@@ -273,26 +274,44 @@ pattern ./features/**/*.feature did not match any file
 Your terminal show show something like:
 
   ```plaintext
-  > testing@1.0.0 test /workdir
-  > wdio
+  ------------------------------------------------------------------
+  [chrome #0-0] Session ID: ad6c947b7dfbe912442fc6a60713d577
+  [chrome #0-0] Spec: /workdir/features/internet-search/main.feature
+  [chrome #0-0] Running: chrome
+  [chrome #0-0]
+  [chrome #0-0] GitHub user search
+  [chrome #0-0]
+  [chrome #0-0]     can search using my keywords
+  [chrome #0-0]       ✓ the search GitHub page loaded
+  [chrome #0-0]       ✓ I introduce my search keywords for an user in the search box
+  [chrome #0-0]       ✓ I press enter in the search box
+  [chrome #0-0]       ✓ I should obtain a list of repositories for that user
+  [chrome #0-0]
+  [chrome #0-0]
+  [chrome #0-0] 4 passing (4s)
+  [chrome #0-0]
 
-    Feature: GitHub user search
+  ------------------------------------------------------------------
+  [firefox #1-0] Session ID: 32d70e05-6a59-4de4-bf96-b62f90019c9e
+  [firefox #1-0] Spec: /workdir/features/internet-search/main.feature
+  [firefox #1-0] Running: firefox
+  [firefox #1-0]
+  [firefox #1-0] GitHub user search
+  [firefox #1-0]
+  [firefox #1-0]     can search using my keywords
+  [firefox #1-0]       ✓ the search GitHub page loaded
+  [firefox #1-0]       ✓ I introduce my search keywords for an user in the search box
+  [firefox #1-0]       ✓ I press enter in the search box
+  [firefox #1-0]       ✓ I should obtain a list of repositories for that user
+  [firefox #1-0]
+  [firefox #1-0]
+  [firefox #1-0] 4 passing (8s)
+  [firefox #1-0]
 
-      Scenario: can search using my keywords
+  ==================================================================
+  Number of specs: 2
 
-    Feature: GitHub user search
-
-      Scenario: can search using my keywords
-        the search GitHub page loaded
-        I introduce my search keywords for an user in the search box
-        I press enter in the search box
-        I should obtain a list of repositories for that user
-        the search GitHub page loaded
-        I introduce my search keywords for an user in the search box
-        I press enter in the search box
-        I should obtain a list of repositories for that user
-
-  8 steps (8 passed, 0 failed, 0 pending)
+  8 passing (12.20s)
 
   Wrote xunit report "chrome.results-0-0.xml" to [./output/].
   Wrote xunit report "firefox.results-1-0.xml" to [./output/].
