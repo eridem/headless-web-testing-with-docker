@@ -37,8 +37,7 @@ docker run -v "$(pwd)/output:/workdir/output" 'my-testing'
 
 - [Set up the project](#set-up-the-project)
 - [Running the tests with Docker](#running-the-tests-with-docker)
-- [Create an empty feature](#create-an-empty-feature)
-- [Test a website](#test-a-website)
+- [Create a simple feature](#create-a-simple-feature)
 
 ## Set up the project
 
@@ -204,7 +203,7 @@ pattern ./features/**/*.feature did not match any file
 pattern ./features/**/*.feature did not match any file
 ```
 
-## Create simple feature
+## Create a simple feature
 
 - Create the following file structure:
   
