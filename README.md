@@ -50,15 +50,15 @@ Create the Node.js application:
   npm init
 
   # Answer the questions as following
-  package name:     (headless-web-testing-with-docker)
-  version:          (1.0.0)
-  description:      My awesome testing
-  entry point:      (index.js)
-  test command:     wdio
-  git repository:   eridem/headless-web-testing-with-docker
-  keywords:         test, web
-  author:           Miguel Angel Dominguez Coloma
-  license:          (ISC) MIT
+    package name:     (headless-web-testing-with-docker)
+    version:          (1.0.0)
+    description:      My awesome testing
+    entry point:      (index.js)
+    test command:     wdio
+    git repository:   eridem/headless-web-testing-with-docker
+    keywords:         test, web
+    author:           Miguel Angel Dominguez Coloma
+    license:          (ISC) MIT
 
   # Install webdriverio
   npm install webdriverio --save
@@ -70,24 +70,22 @@ Create the Node.js application:
 - Configure WebDriverIo executing the command:
 
   ```sh
+  # Set up the config of the webdriverio
   npm test -- config
-  ```
 
-  Then answer the questions as follows:
-
-  ```plaintext
-  ? Where do you want to execute your tests?                              On my local machine
-  ? Which framework do you want to use?                                   cucumber
-  ? Shall I install the framework adapter for you?                        Yes
-  ? Where are your feature files located?                                 ./features/**/*.feature
-  ? Where are your step definitions located?                              ./features/**/*.js
-  ? Which reporter do you want to use?                                    spec, junit
-  ? Shall I install the reporter library for you?                         Yes
-  ? Do you want to add a service to your test setup?                      selenium-standalone
-  ? Shall I install the services for you?                                 Yes
-  ? Level of logging verbosity                                            silent
-  ? In which directory should screenshots gets saved if a command fails?  ./output
-  ? What is the base url?                                                 http://localhost
+  # Answer the questions as following
+    ? Where do you want to execute your tests?                              On my local machine
+    ? Which framework do you want to use?                                   cucumber
+    ? Shall I install the framework adapter for you?                        Yes
+    ? Where are your feature files located?                                 ./features/**/*.feature
+    ? Where are your step definitions located?                              ./features/**/*.js
+    ? Which reporter do you want to use?                                    spec, junit
+    ? Shall I install the reporter library for you?                         Yes
+    ? Do you want to add a service to your test setup?                      selenium-standalone
+    ? Shall I install the services for you?                                 Yes
+    ? Level of logging verbosity                                            silent
+    ? In which directory should screenshots gets saved if a command fails?  ./output
+    ? What is the base url?                                                 http://localhost
   ```
 
 - Modify the file `wdio.conf.js`, replacing the section `capabilities` where we will specify the use of the Chrome and Firefox browsers for our tests:
