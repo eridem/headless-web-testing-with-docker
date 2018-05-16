@@ -1,0 +1,33 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "My awesome testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eridem/testing.git"
+  },
+  "keywords": [
+    "test",
+    "web"
+  ],
+  "author": "Miguel Ángel Domínguez Coloma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eridem/testing/issues"
+  },
+  "homepage": "https://github.com/eridem/testing#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "cucumber": "^4.2.1",
+    "selenium-standalone": "^6.14.0",
+    "wdio-cucumber-framework": "^2.1.0",
+    "wdio-cucumber-reporter": "0.0.2",
+    "wdio-junit-reporter": "^0.4.3",
+    "wdio-selenium-standalone-service": "0.0.10",
+    "webdriverio": "^4.12.0"
+  }
+}

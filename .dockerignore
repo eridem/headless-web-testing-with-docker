@@ -1,0 +1,12 @@
+.git
+
+# Dependencies
+.node_modules
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Output
+output/*
