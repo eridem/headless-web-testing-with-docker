@@ -1,17 +1,15 @@
 # Set up a headless web testing project with Docker, Chrome and Firefox
 
-This tutorial will help you to set up a headless web testing project with Docker. Some of the advantages to work with Docker are:
+This tutorial will help you to set up a headless web testing project with Docker which will give you the following advantages:
 
-- **Continuous Integration**: it is easy to integrate with CI tools due the Docker images will have all components the testing needs without the need to set up or install tools.
+- **Continuous Integration**: Docker is the only tool you need to install on the servers, do not need to maintenance complicate applications and versions.
 - **Easy to work within your team**: stop asking your mates to install the `Foo` and the `Bar` tools to make it work :-)
-
-This tutorial will not explain in detail every step, but it will show you how it was incrementally built.
 
 ## Prerequisites
 
 - [Docker Community Edition](https://store.docker.com/search?type=edition&offering=community)
 
-The following dependencies are only needed when setting up the project (e.g. using this tutorial). As soon the project is already set up, you do not need to request those dependencies to the rest of the developers (that's the magic of Docker). As well, you do not need them in CI machines:
+The following dependencies are only needed when setting up the project (e.g. using this tutorial). Soon as the project is already set up, you do not need to request those dependencies to the rest of the developers (that's the magic of Docker). As well, you do not need them in CI machines:
 
 - [Node.js and NPM](https://nodejs.org/en/)
 - [Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 
@@ -38,6 +36,7 @@ docker run -v "$(pwd)/output:/workdir/output" 'my-testing'
 - [Set up the project](#set-up-the-project)
 - [Running the tests with Docker](#running-the-tests-with-docker)
 - [Create a simple feature](#create-a-simple-feature)
+- [Questions & Wanna go advance](#questions-wanna-go-advance)
 
 ## Set up the project
 
@@ -107,7 +106,7 @@ Create the Node.js application:
   ...
   ```
 
-- Optionally, but recommended, modify the file `wdio.conf.js`, appending at the end of the `config` section the following entry to save a file for the `junit` reports that you may want to use.
+- Modify the file `wdio.conf.js`, appending at the end of the `config` section the following entry:
 
   ```javascript
   ...
@@ -172,7 +171,7 @@ Create _Docker_ files:
   ENTRYPOINT ["npm", "test"]
   ```
 
-Create the following structure to create our tests later and the output reports:
+Create the following structure to store our tests and results:
 
   ```plaintext
     + features/
@@ -253,7 +252,7 @@ pattern ./features/**/*.feature did not match any file
   })
   ```
 
-  _NOTE: the code example should not create screenshots for each step, but we will do like that to test our example_. 
+  _NOTE: the code should not create screenshots for each step, but we will do like that to test our example_. 
 
 - Now that we have one feature, let's run the tests again with the commands:
 
@@ -265,7 +264,7 @@ pattern ./features/**/*.feature did not match any file
   docker run -v "$(pwd)/output:/workdir/output" 'my-testing'
   ```
 
-Your terminal show show something like:
+Your terminal shows something like:
 
   ```plaintext
   ------------------------------------------------------------------
@@ -312,3 +311,7 @@ Your terminal show show something like:
   ```
 
 The folder `output` should be filled with the results of your tests. You can use these output files in your CI tool or local read.
+
+## Questions & Wanna go advance
+
+Would you like to go advance on this setup? Write me a comment and I will check it out!
