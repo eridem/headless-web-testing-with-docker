@@ -62,9 +62,6 @@ Create the Node.js application:
 
   # Install webdriverio
   npm install webdriverio --save
-
-  # Install cucumber reporter
-  npm install wdio-spec-reporter --save
   ```
 
 - Configure WebDriverIo executing the command:
@@ -207,12 +204,12 @@ pattern ./features/**/*.feature did not match any file
   
   ```sh
   + features/
-  + features/internet-search/
-  + features/internet-search/main.feature
-  + features/internet-search/main.js
+  + features/user-search/
+  + features/user-search/main.feature
+  + features/user-search/main.js
   ```
 
-- Add the following content to the file `features/internet-search/main.feature`:
+- Add the following content to the file `features/user-search/main.feature`:
 
   ```gherkin
   Feature: GitHub user search
@@ -227,7 +224,7 @@ pattern ./features/**/*.feature did not match any file
       Then I should obtain a list of repositories for that user
   ```
 
-- Add the following content to the file `features/internet-search/main.js`:
+- Add the following content to the file `features/user-search/main.js`:
 
   ```javascript
   const { Given, When, Then } = require('cucumber')
@@ -273,7 +270,7 @@ Your terminal show show something like:
   ```plaintext
   ------------------------------------------------------------------
   [chrome #0-0] Session ID: ad6c947b7dfbe912442fc6a60713d577
-  [chrome #0-0] Spec: /workdir/features/internet-search/main.feature
+  [chrome #0-0] Spec: /workdir/features/user-search/main.feature
   [chrome #0-0] Running: chrome
   [chrome #0-0]
   [chrome #0-0] GitHub user search
@@ -290,7 +287,7 @@ Your terminal show show something like:
 
   ------------------------------------------------------------------
   [firefox #1-0] Session ID: 32d70e05-6a59-4de4-bf96-b62f90019c9e
-  [firefox #1-0] Spec: /workdir/features/internet-search/main.feature
+  [firefox #1-0] Spec: /workdir/features/user-search/main.feature
   [firefox #1-0] Running: firefox
   [firefox #1-0]
   [firefox #1-0] GitHub user search
