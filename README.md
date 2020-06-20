@@ -311,7 +311,3 @@ Your terminal shows something like:
   ```
 
 The folder `output` should be filled with the results of your tests. You can use these output files in your CI tool or local read.
-
-## Questions & Wanna go advance
-
-Would you like to go advance on this setup? Write me a comment and I will check it out!
